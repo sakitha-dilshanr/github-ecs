@@ -19,5 +19,5 @@ variable "availability_zones" {
   
 }
 
-variable "key_name" ()
+
 

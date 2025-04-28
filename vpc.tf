@@ -9,7 +9,7 @@ resource "aws_vpc" "this" {
   }
 
 #public Subnet
-resource "aws_subnet" "public " {
+resource "aws_subnet" "public" {
     count = length(var.public_subnet_cidr)
     vpc_id = aws_vpc.this.id
     availability_zone = var.availability_zones[count.index]
