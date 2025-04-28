@@ -1,6 +1,6 @@
 #ECS Cluster
 resource "aws_ecs_cluster" "ecs-cluster" {
-    name = "nginx ecs cluster"
+    name = "nginx-ecs-cluster"
   
 }
 
