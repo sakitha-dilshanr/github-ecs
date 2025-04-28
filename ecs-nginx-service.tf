@@ -6,8 +6,9 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
     cpu = "256"
     memory = "512"
     execution_role_arn = aws_iam_role.ecs_task_execution_role.arn
-    container_definitions = jsondecode([
-        {   name = "nginxcontainer"
+    container_definitions = jsonencode([
+        {   
+            name = "nginxcontainer"
             image  = "nginx:latest"
             portmappings = [{containerPort = 80, protocol = "tcp"}]
 
