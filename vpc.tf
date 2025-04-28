@@ -10,6 +10,7 @@ resource "aws_vpc" "this" {
 
 #public Subnet
 resource "aws_subnet" "public" {
+    count = length(var.public_subnet_cidr)
     cidr_block = var.public_subnet_cidr[count.index]
     vpc_id = aws_vpc.this.id
     availability_zone = var.availability_zones[count.index]
@@ -20,6 +21,7 @@ resource "aws_subnet" "public" {
 
 #private Subnet
 resource "aws_subnet" "private" {
+    count = length(var.private_subnet_cidr)
     cidr_block = var.private_subnet_cidr[count.index]
     vpc_id = aws_vpc.this.id
     availability_zone = var.availability_zones[count.index]
