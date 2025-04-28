@@ -20,7 +20,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
 resource "aws_security_group" "ecs_service_sg" {
   name        = "ecs-service-sg"
   description = "Allow HTTP"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.this.id
 
   ingress {
     from_port   = 80
