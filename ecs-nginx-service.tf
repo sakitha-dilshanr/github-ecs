@@ -47,7 +47,8 @@ resource "aws_ecs_service" "service-app" {
     launch_type = "FARGATE"
 
     network_configuration {
-      subnets = var.private_subnet_cidr.id
+      #subnets = var.private_subnet_cidr.id
+      subnets = aws_subnet.private[*].id
       security_groups = [aws_security_group.ecs_service_sg.id]
 
     }
