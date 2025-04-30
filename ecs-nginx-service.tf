@@ -40,7 +40,7 @@ resource "aws_security_group" "ecs_service_sg" {
 
 # ECS Service
 resource "aws_ecs_service" "service-app" {
-    name = "nginx-ecs service"
+    name = "nginx-ecs-service"
     cluster = aws_ecs_cluster.ecs-cluster.id
     task_definition = aws_ecs_task_definition.aws-ecs-task.arn
     desired_count = 1
